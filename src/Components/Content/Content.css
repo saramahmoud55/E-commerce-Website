@@ -1,0 +1,25 @@
+
+.img-responsive{
+    height: 550px;
+    right: 0;
+ padding-left: 125px;
+}
+.about-image{
+float: right;
+
+}
+.about{
+    background-color: #F4F4F4;
+    width: 100%;
+
+}
+.about-info{
+    padding-top: 150px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 30px;
+    color: #5F093D;
+    font-family: 'Akaya Telivigala', cursive;
+    font-size: 30px;
+}

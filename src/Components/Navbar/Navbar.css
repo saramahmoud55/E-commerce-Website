@@ -1,0 +1,37 @@
+
+:root{
+    --mainColor:#5F093D;
+    --whitColor:#fff;
+    --blackColor:#000;
+    --lightDark:#222;
+  }
+  body{
+    font-family: 'Lato', sans-serif;
+  }
+  .logo{
+    width: 70px;
+    height: 70px;
+  }
+  .navbar{
+    height: 70px;
+    line-height: 50px;
+    padding: 0 80px;
+
+  }
+  .shoppingcart i{
+    display: inline-block;
+    font-size: 25px;
+    color: var(--lightDark);
+    margin-right: 15px;
+  }
+  .cartCount{
+    display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: var(--mainColor);
+  color: var(--whitColor);
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  }
