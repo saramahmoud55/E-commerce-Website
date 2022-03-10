@@ -14,12 +14,38 @@ float: right;
 
 }
 .about-info{
-    padding-top: 150px;
+    padding-top: 180px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding-left: 30px;
     color: #5F093D;
-    font-family: 'Akaya Telivigala', cursive;
+    font-family:Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
+.about-info h1{
+    font-weight: 700;
+}
+.cards img{
+width: 300px;
+height: 280px;
+margin-top: 80px;
+border-radius: 15px;
+
+}
+.cardtitle{
+    margin-top: 10px;
+    text-align: center;
+ 
+
+}
+.cards img:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+    transform: scale(1.1);
+}
+.carddiv{
+    height: 450px;
+    background: url('../../images/background1.jpg') no-repeat center fixed;     
+    background-size: cover;
+}
+

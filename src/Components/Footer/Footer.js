@@ -11,6 +11,7 @@ import {
 
 export default function Footer() {
   return (
+  
     <MDBFooter className='text-center' color='white' bgColor='dark' >
       <MDBContainer className='p-4'>
         <section className='mb-4'>
@@ -166,6 +167,8 @@ export default function Footer() {
           MDBootstrap.com
         </a>
       </div>
+      
     </MDBFooter>
+
   );
 }

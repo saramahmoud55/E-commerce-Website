@@ -5,18 +5,25 @@ import Navbar from '../src/Components/Navbar/Navbar';
 import Content from './Components/Content/Content';
 import { Routes, Route } from 'react-router-dom';
 import Product from './Components/Product/Product';
+import Cart from './Components/Cart/Cart';
+import Login from './Components/Login/Login';
+
 function App() {
+  
   return (
     <div className="App">
 
 <Navbar />
 
       <Routes>
-        <Route index path="/home" element={ <Home />}/>
+        <Route index path="/" element={ <Home />}/>
         <Route path="/products" element={<Products />} />
         <Route path="/aboutus" element={<Content/>}/>
         <Route path='/products/:id' element={<Product/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
+     
     </div>
   );
 }

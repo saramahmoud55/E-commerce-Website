@@ -1,30 +1,78 @@
 import React from 'react';
 import contentImage from '../../images/shoes.jpg';
-import './Content.css'
+import './Content.css';
+import men from '../../images/Men.jpeg';
+import Women from '../../images/Women.jpg';
+import jewelery from '../../images/Pinterest.jpg';
+import jeweleryvedio from '../../images/vedios/Pinterest.gif'
+import electronics from '../../images/electroics.jpg';
+import menVedio from '../../images/vedios/men.gif';
+import electronicVedio from '../../images/vedios/electronics.gif';
+import womenVedio from '../../images/vedios/Women.gif'
+import { useNavigate } from 'react-router-dom';
+
+
 export default function Content() {
+    const navigate = useNavigate();
+
+
     return (
         <section className="about" >
-          <div class="container" >
-               <div class="row">
-                   
+            <div className="container" >
+                <div className='row carddiv'>
+
+                    <div className="col cards" >
+
+                        <img src={men} className="card-img-top" onClick={() => navigate('/products', { state: "men's clothing" })} alt="..."
+                            onMouseOver={e => e.currentTarget.src = menVedio} onMouseOut={e => e.currentTarget.src = men}
+                        />
+                        <h2 className='cardtitle' >Men's Clothing</h2>
+                    </div>
+                    <div className="col cards" >
+                        <img src={Women} className="card-img-top" onClick={() => navigate('/products', { state: "women's clothing" })} alt="..."
+                            onMouseOver={e => e.currentTarget.src = womenVedio} onMouseOut={e => e.currentTarget.src = Women}
+                        />
+                        <h2 className='cardtitle'>Women's Clothing</h2>
+
+
+                    </div>
+                    <div className="col cards" >
+                        <img src={jewelery} className="card-img-top " onClick={() => navigate('/products', { state: "jewelery" })} alt="..."
+                            onMouseOver={e => e.currentTarget.src = jeweleryvedio} onMouseOut={e => e.currentTarget.src = jewelery}
+                        />
+                        <h2 className='cardtitle'>Jewelery</h2>
+                    </div>
+                    <div className="col cards">
+                        <img src={electronics} className="card-img-top" onClick={() => navigate('/products', { state: "electronics" })} alt="..."
+                            onMouseOver={e => e.currentTarget.src = electronicVedio} onMouseOut={e => e.currentTarget.src = electronics}
+                        />
+                        <h2 className='cardtitle'>Electronics</h2>
+
+                    </div>
+
+                </div>
+                <div className="row">
+
                     <div className="col-md-8 col-sm-12 " >
-                         <div className="about-info ">
-                             
-                              <div className="wow fadeInUp" >
-                                   <h1>Red Carpet</h1>
-                                   <p>
-                                   GORGEOUS FASHION COLLECTION FOR THE AWESOME 2017 SUMMER SEASON OF THE CANNES FESTIVAL
-                                   </p>
-                              </div>
-                         </div>
+                        <div className="about-info ">
+
+                            <div className="wow fadeInUp" >
+                                <h1>Red Carpet</h1>
+                                <p>
+                                    GORGEOUS FASHION COLLECTION FOR THE AWESOME 2017 SUMMER SEASON OF THE CANNES FESTIVAL
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <div className="col-md-4 col-sm-12 about-image ">
-                         <div >
-                              <img src={contentImage} className="img-responsive" alt="contentImage"/>
-                         </div>
+                        <div >
+                            <img src={contentImage} className="img-responsive" alt="contentImage" />
+                        </div>
                     </div>
-               </div>
-          </div>
-     </section>
+                </div>
+                <br />
+            </div>
+
+        </section>
     )
 }
