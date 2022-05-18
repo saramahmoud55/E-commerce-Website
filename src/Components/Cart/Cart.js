@@ -1,16 +1,17 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { Link,useNavigate } from 'react-router-dom';
 import Cartimage from '../../images/Cart.png';
-import {deleteItem,decreaseItem,addItem,clearCart} from '../../Redux/CartReducer';
+import {deleteItem,decreaseItem,addItem,clearCart,getTotal} from '../../Redux/CartReducer';
 import './cart.css';
 export default function Cart() {
   const navigate = useNavigate();
+  
   const cart = useSelector((state) => state);
-  const cartAmount = useSelector((state) => state.cartTotalAmount);
-
+const cartTotal =useSelector((state)=>state.cartTotalQuantity)
   const dispatch = useDispatch();
-
+useEffect(()=>{dispatch(getTotal())},[cart]);
   const deleteItemToCart =(cartItem)=>{
     dispatch(deleteItem(cartItem));
   }
@@ -60,12 +61,12 @@ export default function Cart() {
               <div className='cart-product-price'>${cartItem.price}</div>
               <div className='cart-product-quantity'>
                 <button onClick={()=>decreaseItemFromCart(cartItem)}>-</button>
-                <div className='count'>{cartItem.cartQuantity}</div>
+                <div className='count'>{cartItem.cartTotalQuantity}</div>
                 <button onClick={()=>increaseItemForCart(cartItem)}>+</button>
 
               </div>
               <div className='cart-product-total-price'>
-                ${cartItem.price * cartItem.cartQuantity}
+                ${cartItem.price * cartItem.cartTotalQuantity}
               </div>
             </div>
           ))}
@@ -75,7 +76,7 @@ export default function Cart() {
           <div className='cart-checkout'>
             <div className='subtotal'>
               <span>Subtotal</span>
-              <span className='amount'>${cartAmount}</span>
+              <span className='amount'>${cartTotal}</span>
             </div>
             <p>Taxes and shipping calculated at checkout</p>
             <button onClick={()=>navigate('/login')}>Check out</button>
