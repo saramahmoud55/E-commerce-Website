@@ -2,14 +2,45 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
  const initialState={
      cartItems:[],
+     favedItems:[],
      cartTotalAmount:0,
      cartTotalQuantity:0,
+     favCartAmount:0,
+     favQuantity:0
     };
 
 const CartReducer = createSlice({
     name:"cartReducer",
     initialState,
     reducers:{
+        addFavItem:(state,action)=>{
+            const ifFavedItemExsited =state.favedItems.findIndex((item)=>item.id === action.payload.id);
+            if(ifFavedItemExsited >= 0){
+                console.log("item existed:");
+                console.log("favitems:", state.favQuantity);
+            state.favCartAmount -=state.favedItems[ifFavedItemExsited].favCartAmount;
+            state.favedItems.splice(ifFavedItemExsited,1);
+            toast.info(` ${action.payload.title} removed from  favorite cart`,{position:"bottom-left"});
+            state.favQuantity--;
+
+            }else{
+                const favProduct={...action.payload,favCartAmount:1};
+                console.log(" item added to Favorite: ", action.payload);
+                state.favedItems.push(favProduct);
+                toast.success(`${action.payload.title} item added to Favorite`,{position:"bottom-left"})
+                state.favQuantity++;
+
+            }
+
+        },
+        deleteFromFav:(state,action)=>{
+            const deletedFavItem=state.favedItems.findIndex((item)=>item.id === action.payload.id);
+            console.log(deletedFavItem,state.favCartAmount,state.favedItems[deletedFavItem].cartQuantity);
+            state.favCartAmount -=state.favedItems[deletedFavItem].favCartAmount;
+            state.favedItems.splice(deletedFavItem,1);
+            toast.info(` ${action.payload.title} removed from  favorite cart`,{position:"bottom-left"});
+
+        },
         addItem:(state, action)=>{
             const ifAddedItemExsited =state.cartItems.findIndex((item)=>item.id === action.payload.id);
             if(ifAddedItemExsited >= 0){
@@ -79,5 +110,5 @@ const CartReducer = createSlice({
     }
 });
 
-export const {addItem ,deleteItem,decreaseItem ,clearCart,getTotal}=CartReducer.actions;
+export const {addItem ,deleteItem,decreaseItem ,clearCart,getTotal,addFavItem,deleteFromFav}=CartReducer.actions;
 export default CartReducer.reducer;

@@ -22,9 +22,8 @@ const navigate=useNavigate();
                 <h1 >The Beaty festival</h1>
                 <h3>Skincare ,Makeup & more...</h3>
                 <button className="btn1" onClick={()=>navigate('/products')} >Shop Now<span></span><span></span><span></span><span></span></button>
-               
               </div>
-              <img className="img" src={Image1} alt="Shopping " />
+              <img className="img" src={Image1} alt="Shopping" />
             </div>
           </div>
           {/**slide2 */}

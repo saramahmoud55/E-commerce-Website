@@ -1,51 +1,105 @@
-
-.img-responsive{
-    height: 550px;
-    right: 0;
- padding-left: 125px;
+.img-responsive {
+    height: 400px;
+    position: absolute;
+    top: 10%; 
+    right: 10%;
 }
-.about-image{
-float: right;
 
+.about-image {
+    float: right;
 }
+
 .about{
     background-color: #F4F4F4;
-    width: 100%;
 
 }
-.about-info{
-    padding-top: 180px;
-    justify-content: center;
-    align-items: center;
+.aboutContent {
+    background-color: #F4F4F4;
+    width: 100%;
+    position: relative;
+    padding: 30px;
+    height: 400px;
+
+}
+
+.about-info {
+    margin-top: 90px;
     text-align: left;
     padding-left: 30px;
     color: #5F093D;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
-.about-info h1{
+
+.about-info h1 {
     font-weight: 700;
 }
-.cards img{
-width: 300px;
-height: 280px;
-margin-top: 80px;
-border-radius: 15px;
+
+.cards {
+    margin: 80px 40px;
+    width: 300px;
+    
+}
+
+.cards img {
+    height: 300px;
+    border-radius: 15px;
 
 }
-.cardtitle{
+
+.cardtitle {
     margin-top: 10px;
     text-align: center;
- 
-
 }
-.cards img:hover{
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+
+.cards img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: scale(1.1);
 }
-.carddiv{
-    height: 450px;
-    background: url('../../images/background1.jpg') no-repeat center fixed;     
+
+.carddiv {
+
+    height:fit-content;
+    background: url('../../images/background1.jpg') no-repeat center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
+  
+@media (max-width:950px) {
+    .cards img {
+        height: 100px;
+    }
+
+    .cards {
+        width: 100px;
+    }
+  
+}
+@media (max-width:720px) {
+    .cards img {
+        height: 150px;
+    }
+
+    .cards {
+        margin: 20px ;
+        width: 150px;
+    }
+    .about-info{
+        font-size: 14px;
+        word-wrap: wrap;
+        width: 200px;
+        margin-top:40px;
+    }
+    .img-responsive {
+        height: 265px;
+        width: 160px;
+    }
+    .aboutContent{
+        height: fit-content;
+    }
+    
+   
+}

@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import Product from './Components/Product/Product';
 import Cart from './Components/Cart/Cart';
 import Login from './Components/Login/Login';
+import FetchedData from './Components/FetchedData/FetchedData';
 
 function App() {
   
@@ -17,11 +18,12 @@ function App() {
 
       <Routes>
         <Route index path="/" element={ <Home />}/>
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<FetchedData />} />
         <Route path="/aboutus" element={<Content/>}/>
         <Route path='/products/:id' element={<Product/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login' element={<Login/>}/>
+
       </Routes>
      
     </div>
